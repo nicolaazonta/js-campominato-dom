@@ -81,15 +81,14 @@ function bombs(numberOfSquares) {
 
 
         //if che incrementa k se il numero non si ripete e che aggiunge lo stesso numero all'array 
-        if (randomNumberAnchor === (bombsArray[k - 1]) ){}
-        else {
-
+        if (!(randomNumberAnchor === bombsArray[k - 1])){
+            
             bombsArray.push = randomNumberAnchor;
-
+    
             console.log(randomNumberAnchor);
-
-            k++
-        }        
+    
+            k++  
+        }      
     }     
     return bombsArray;
 }
