@@ -17,7 +17,7 @@ const createButtonEl = document.getElementById('create_button');
 createButtonEl.addEventListener('click' , function(){      
     const difficultChoice = Number(document.getElementById('difficult_choice').value);
 
-    // the user choose the difficult of the game
+    // the choose the difficult of the game (easy / medium / hard)
     let difficultGradient; 
     let numberOfSquares;
 
@@ -30,65 +30,55 @@ createButtonEl.addEventListener('click' , function(){
     } else if(difficultChoice === 3){
         difficultGradient = 'square_difficult';
         numberOfSquares = 49;
-    } 
-
-
-    console.log(bombs(numberOfSquares));
-    
-
+    }    
 
     // create the squares grid (100-easy / 91-medium / 49-hard)
     for (let i = 0; i < numberOfSquares; i++) {
-
-        //Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe. Nella stessa cella può essere posizionata al massimo una bomba, perciò nell’array delle bombe non potranno esserci due numeri uguali.
-
-
-
-
-
-
 
         const containerEl = document.querySelector('.container');
         const creatingSquare = `<div class="square ${difficultGradient} d-flex justify-content-center align-items-center"><h5>${i + 1}</h5>
         </div>`
         containerEl.insertAdjacentHTML('beforeend' , creatingSquare);    
     }
-
-
     //the user can interact with the grid changing the squares color
+    
     const allSquares = document.querySelectorAll('.square');
+    const arrayRandom = bombs(numberOfSquares);
+    console.log(arrayRandom);
+    
+    let k = 0;
+        for (let i = 0; i < allSquares.length ; i++) {
+            let thisCell = allSquares[i];
+            thisCell.addEventListener('click', function(){
+                
+                //console.log(i);
+                //const thisClickedNumber = document. 
+                if(arrayRandom.includes(i + 1)){
+                    k++;
 
-    for (let i = 0; i < allSquares.length ; i++) {
-
-        let thisCell = allSquares[i];
-
-        thisCell.addEventListener('click', function(){
-            this.classList.toggle('clicked');
-            //console.log(allSquares[i]);
-        })
-        
-    }
-
-})
+                    console.log('bomba');
+                   
+                    thisCell.classList.add('square_bomb');  
+                   
+                }
+                
+                this.classList.toggle('clicked');
+            })
+}})
 
 
+
+
+
+// function bombs create 16 random numbers due to difficult selected by the user
 function bombs(numberOfSquares) {
-
     let bombsArray = [];
 
     let k = 0;
     while (k < 16) {
-
-        let randomNumberAnchor = Math.floor(Math.random() * numberOfSquares) + 1;        
-
-        //if che incrementa k se il numero non si ripete e che aggiunge lo stesso numero all'array 
-
+        let randomNumberAnchor = Math.floor(Math.random() * numberOfSquares) + 1;    
         if (!(bombsArray.includes(randomNumberAnchor))) {//verifico se il numero non sia già presente
-
-            //console.log(randomNumberAnchor);//randomNumberAnchor = variabile di appoggio per il numero casuale
-
-            bombsArray.push(randomNumberAnchor); //aggiungo il numero casuale all'array
-    
+            bombsArray.push(randomNumberAnchor); //aggiungo il numero casuale all'array    
             k++  
         }      
     }     
