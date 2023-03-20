@@ -32,7 +32,9 @@ createButtonEl.addEventListener('click' , function(){
         numberOfSquares = 49;
     } 
 
-    bombs(numberOfSquares);
+
+    console.log(bombs(numberOfSquares));
+    
 
 
     // create the squares grid (100-easy / 91-medium / 49-hard)
@@ -77,15 +79,15 @@ function bombs(numberOfSquares) {
     let k = 0;
     while (k < 16) {
 
-        let randomNumberAnchor = Math.floor(Math.random() * numberOfSquares) + 1;
-
+        let randomNumberAnchor = Math.floor(Math.random() * numberOfSquares) + 1;        
 
         //if che incrementa k se il numero non si ripete e che aggiunge lo stesso numero all'array 
-        if (!(randomNumberAnchor === bombsArray[k - 1])){
-            
-            bombsArray.push = randomNumberAnchor;
-    
-            console.log(randomNumberAnchor);
+
+        if (!(bombsArray.includes(randomNumberAnchor))) {//verifico se il numero non sia già presente
+
+            //console.log(randomNumberAnchor);//randomNumberAnchor = variabile di appoggio per il numero casuale
+
+            bombsArray.push(randomNumberAnchor); //aggiungo il numero casuale all'array
     
             k++  
         }      
