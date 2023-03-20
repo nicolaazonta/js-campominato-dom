@@ -1,0 +1,39 @@
+
+
+#app_header{
+    background-color: rgba(255, 217, 0, 0.537);
+    height: 5rem;
+}
+
+#app_main{
+    background-color: rgba(26, 22, 4, 0.941);
+}
+
+#app_footer{
+    background-color: rgba(255, 217, 0, 0.537);
+    height: 5rem;
+}
+
+
+.square{
+    background-color: rgba(0, 255, 255, 0.596);
+    border: solid 1px rgba(26, 22, 4, 0.941) ;
+    color: rgba(26, 22, 4, 0.941);
+    aspect-ratio: 1;
+}
+.square_easy{
+    width: calc(100% / 10);
+}
+.square_medium{
+    width: calc(100% / 9);
+}
+.square_difficult{
+    width: calc(100% / 7);
+}
+.clicked{
+    background-color:rgba(255, 217, 0, 0.537) ;
+}
+
+.form-select {
+    width: auto;
+}
