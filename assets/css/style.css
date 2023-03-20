@@ -1,24 +1,24 @@
 
 
 #app_header{
-    background-color: rgba(255, 217, 0, 0.537);
+    background-color: #029E74;
     height: 5rem;
 }
 
 #app_main{
-    background-color: rgba(26, 22, 4, 0.941);
+    background-color: #4A0D52;
 }
 
 #app_footer{
-    background-color: rgba(255, 217, 0, 0.537);
+    background-color: #029E74;
     height: 5rem;
 }
 
 
 .square{
-    background-color: rgba(0, 255, 255, 0.596);
+    background-color: #D10EEB;
     border: solid 1px rgba(26, 22, 4, 0.941) ;
-    color: rgba(26, 22, 4, 0.941);
+    color: black;
     aspect-ratio: 1;
 }
 .square_easy{
@@ -34,7 +34,7 @@
     background-color: black;
 }
 .clicked{
-    background-color:rgba(255, 217, 0, 0.537) ;
+    background-color:#EBB826;
 }
 
 .form-select {

@@ -36,7 +36,7 @@ createButtonEl.addEventListener('click' , function(){
     for (let i = 0; i < numberOfSquares; i++) {
 
         const containerEl = document.querySelector('.container');
-        const creatingSquare = `<div class="square ${difficultGradient} d-flex justify-content-center align-items-center"><h5>${i + 1}</h5>
+        const creatingSquare = `<div class="square ${difficultGradient} d-flex justify-content-center align-items-center rounded-2"><h5>${i + 1}</h5>
         </div>`
         containerEl.insertAdjacentHTML('beforeend' , creatingSquare);    
     }
@@ -44,25 +44,24 @@ createButtonEl.addEventListener('click' , function(){
     
     const allSquares = document.querySelectorAll('.square');
     const arrayRandom = bombs(numberOfSquares);
-    console.log(arrayRandom);
+    //console.log(arrayRandom);
     
     let k = 0;
         for (let i = 0; i < allSquares.length ; i++) {
             let thisCell = allSquares[i];
             thisCell.addEventListener('click', function(){
-                
-                //console.log(i);
-                //const thisClickedNumber = document. 
+
+                this.classList.toggle('clicked');
+
                 if(arrayRandom.includes(i + 1)){
                     k++;
-
-                    console.log('bomba');
-                   
-                    thisCell.classList.add('square_bomb');  
-                   
+                    thisCell.classList.remove('clicked');                     
+                    thisCell.classList.add('square_bomb');                  
+                    
+                    document.querySelector('h1').innerHTML='GAME OVER'
                 }
                 
-                this.classList.toggle('clicked');
+                
             })
 }})
 
