@@ -12,20 +12,24 @@
 </head>
 <body>
 
-    <div id="app_header" class="d-flex align-items-center justify-content-end"><!-- /#app_header -->
-        <select id="difficult_choice" class="form-select form_dark text-uppercase" aria-label="Default select example">
-            <option selected>select a difficult</option>
-            <option value="1">easy</option>
-            <option value="2">medium</option>
-            <option value="3">hard</option>
-          </select>
+    <div id="app_header" class="d-flex align-items-center justify-content-between"><!-- /#app_header -->
+        <h2 class="text-uppercase px-4 fw-bold">prato fiorito</h2>
+        <div class="d-flex align-items-center">
+            <select id="difficult_choice" class="form-select form_dark text-uppercase" aria-label="Default select example">
+                <option selected>select a difficult</option>
+                <option value="1">easy</option>
+                <option value="2">medium</option>
+                <option value="3">hard</option>
+              </select>
+    
+            <button id="create_button" type="button" class="my-3 btn mx-3 text-uppercase btn_dark">play</button>
 
-        <button id="create_button" type="button" class="btn mx-3 text-uppercase btn_dark">play</button>
+        </div>
 
     </div>
     
     <div id="app_main" class="py-5"><!-- /#app_main -->
-        <div class="container d-flex flex-wrap w-50"><!-- /.container -->
+        <div id="grid" class="container d-flex flex-wrap"><!-- /.container -->
        
             <!-- <div class="square d-flex justify-content-center align-content-center"><span>ocio</span>
             </div> -->
@@ -40,6 +44,7 @@
         <h3 class=""></h3>
         <h1 class="fw-bold"></h1>
         <h6 class=""></h6>
+
 
 
     </div>

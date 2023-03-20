@@ -30,7 +30,7 @@ createButtonEl.addEventListener('click' , function(){
     } else if(difficultChoice === 3){
         difficultGradient = 'square_difficult';
         numberOfSquares = 49;
-    }    
+    }  else {}  
 
     // create the squares grid (100-easy / 91-medium / 49-hard)
     for (let i = 0; i < numberOfSquares; i++) {
