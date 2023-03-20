@@ -53,13 +53,34 @@ createButtonEl.addEventListener('click' , function(){
 
                 this.classList.toggle('clicked');
 
+                if(numberOfSquares===49 && k===(numberOfSquares-16)){
+                    document.querySelector('h3').innerHTML=`CONGRATS`
+                    document.querySelector('h1').innerHTML=`YOU WON`
+                    document.querySelector('h6').innerHTML=`YOU HAVE CLICKED ${k+1} TIMES`
+                } else if (numberOfSquares===82 && k===(numberOfSquares-16)){
+                    document.querySelector('h3').innerHTML=`CONGRATS`
+                    document.querySelector('h1').innerHTML=`YOU WON`
+                    document.querySelector('h6').innerHTML=`YOU HAVE CLICKED ${k+1} TIMES`
+                } else if (numberOfSquares===100 && k===(numberOfSquares-16)){
+                    document.querySelector('h3').innerHTML=`CONGRATS`
+                    document.querySelector('h1').innerHTML=`YOU WON`
+                    document.querySelector('h6').innerHTML=`YOU HAVE CLICKED ${k+1} TIMES`
+                }
+
                 if(arrayRandom.includes(i + 1)){
-                    k++;
                     thisCell.classList.remove('clicked');                     
                     thisCell.classList.add('square_bomb');                  
                     
-                    document.querySelector('h1').innerHTML='GAME OVER'
+                    document.querySelector('h3').innerHTML=`YOU FOUND THE BOMB`
+                    document.querySelector('h1').innerHTML=`GAME OVER`
+                    document.querySelector('h6').innerHTML=`YOU HAVE CLICKED ${k} TIMES`
+
                 }
+
+                k++;
+                
+                console.log(numberOfSquares); 
+
                 
                 
             })
